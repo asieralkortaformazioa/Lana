@@ -6,7 +6,7 @@ Característica: Podrá modificarse la estructura de los proyectos
 
   Antecedentes:
     Dado un proyecto llamado proyecto ejemplo
-    Y estamos logados Responsable
+    Y estando logados como Responsable
 
   Escenario: modificando la estructura del proyecto
     Cuando vamos a la página principal
@@ -16,4 +16,10 @@ Característica: Podrá modificarse la estructura de los proyectos
     Entonces debería ver "proyecto ejemplo"
 
 
+    Cuando se añada una unidad
+    Entonces debería ver la nueva unidad en el listado
+    Y deberá ver los coches de cada unidad con el tipo especificado
+
+    Cuando se edite la información de cabecera y se guarde
+    Entonces se deberá ver correctamente
 

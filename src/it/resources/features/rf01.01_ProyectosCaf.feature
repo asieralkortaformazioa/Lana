@@ -5,7 +5,8 @@ Característica: Los proyectos vendrán creados desde los sistemas de Caf.
   Se quiere crear un proyecto para que se pueda crear la estructura pertinente del mismo.
 
     Escenario: editando proyectos
-      Dado estamos en la pantalla principal
+      Dado estando en la página principal
+      Y estando logados como Responsable
       Cuando se necesita un nuevo proyecto
       Entonces existirá en los sistemas de Caf
 
