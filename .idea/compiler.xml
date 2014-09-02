@@ -22,9 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="testProject" />
+        <module name="legacyUtils" />
+        <module name="portalCommon" />
+        <module name="RequirementReader" />
+        <module name="utils.ServerUtils" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="legacyUtils" target="1.5" />
+      <module name="utils.ServerUtils" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

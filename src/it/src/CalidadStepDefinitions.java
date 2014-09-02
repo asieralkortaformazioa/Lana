@@ -9,7 +9,7 @@ import cucumber.api.java.es.Entonces;
 /**
  * Created by developer on 7/29/14.
  */
-public class StepDefinitions {
+public class CalidadStepDefinitions {
 
     @Dado("^estando en la página ((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?)$")
     public void estamos_en_la_página_url(String url)
@@ -46,7 +46,7 @@ public class StepDefinitions {
 
 
 
-    @Dado("^un proyecto llamado proyecto ejemplo$")
+        @Dado("^un proyecto llamado (\"(.*?)\")$")
     public void un_proyecto_llamado_proyecto_ejemplo() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
@@ -76,8 +76,8 @@ public class StepDefinitions {
         throw new PendingException();
     }
 
-    @Cuando("^se navegue hasta el proyecto$")
-    public void se_navegue_hasta_el_proyecto() throws Throwable {
+    @Cuando("^se navega hasta (\"(.*?)\")$")
+    public void se_navegue_hasta_el_proyecto(String projectName) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }

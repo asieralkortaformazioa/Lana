@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../RequirementReader/RequirementReader.iml" filepath="$PROJECT_DIR$/../RequirementReader/RequirementReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../modules/legacyFramework/legacyUtils/legacyUtils/legacyUtils.iml" filepath="$PROJECT_DIR$/../../../modules/legacyFramework/legacyUtils/legacyUtils/legacyUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../modules/portalCommon/trunk/PortalCommon/portalCommon.iml" filepath="$PROJECT_DIR$/../../../modules/portalCommon/trunk/PortalCommon/portalCommon.iml" />
       <module fileurl="file://$PROJECT_DIR$/testProject.iml" filepath="$PROJECT_DIR$/testProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../modules/serverUtils/trunk/ServerUtils/utils.ServerUtils.iml" filepath="$PROJECT_DIR$/../../../modules/serverUtils/trunk/ServerUtils/utils.ServerUtils.iml" />
     </modules>
   </component>
 </project>

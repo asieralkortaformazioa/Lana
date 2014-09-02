@@ -3,11 +3,18 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="IdProvider" IDEtalkID="78E729ADC418A8C4A45D33317FDE66D2" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../RequirementReader/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../modules/legacyFramework/legacyUtils/legacyUtils/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../modules/portalCommon/trunk/PortalCommon/pom.xml" />
+        <option value="$PROJECT_DIR$/../../../modules/serverUtils/trunk/ServerUtils/pom.xml" />
       </list>
     </option>
   </component>
@@ -121,22 +128,6 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.6</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
 
