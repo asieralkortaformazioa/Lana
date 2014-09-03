@@ -14,7 +14,7 @@ Característica: Gestionar Responsables de Proyecto
 
     Cuando añadimos el responsable "ResponsablePrueba" al proyecto
     Entonces el responsable "ResponsablePrueba" no se listará en el "EncargadosCaf"
-    Pero el responsable "ResponsablePrueba" se visualizará en el listado de "responsablesActuales"
+    Pero el valor "ResponsablePrueba" se visualizará en el listado "responsablesActuales"
 
 
 

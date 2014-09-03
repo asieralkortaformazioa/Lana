@@ -12,6 +12,7 @@ Característica: Podrá modificarse la estructura de los proyectos
     Cuando vamos a la página principal
     Entonces se deberían ver el árbol de proyectos
 
+
     Cuando se navega hasta "proyecto ejemplo"
     Entonces debería ver "proyecto ejemplo"
     Y se visualizarán las unidades asociadas

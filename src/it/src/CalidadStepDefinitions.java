@@ -242,7 +242,7 @@ public class CalidadStepDefinitions {
         throw new PendingException();
     }
 
-    @Entonces("^en la tabla (\"(.*?)\")$ fila (\"(.*?)\")$ el campo \"Estado\" tendrá el valor (\"(.*?)\")$ ")
+    @Entonces("^en la tabla (\"(.*?)\")$ fila (\"(.*?)\")$ el campo (\"(.*?)\")$ tendrá el valor (\"(.*?)\")$ ")
     public void en_la_tabla_fila_el_campo_tendra_el_valor (String tabla, String fila, String campo, String valor)
     {
 // Write code here that turns the phrase above into concrete actions
