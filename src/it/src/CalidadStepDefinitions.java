@@ -2,9 +2,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
-import cucumber.api.java.es.Entonces;
+import cucumber.api.java.es.*;
 
 /**
  * Created by developer on 7/29/14.
@@ -46,11 +44,30 @@ public class CalidadStepDefinitions {
 
 
 
-        @Dado("^un proyecto llamado (\"(.*?)\")$")
+    @Dado("^un proyecto llamado (\"(.*?)\")$")
     public void un_proyecto_llamado_proyecto_ejemplo() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
+    @Y ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
+    @Cuando ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
+    public void se_modifica_el_campo_por (String nombreCampo, String valorCampo) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Y("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
+    @Entonces("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
+    public void en_el_campo_se_visualizara  (String nombreCampo, String valorCampo) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+
+
 
     @Dado("^estando logados como ([a-z|A-Z|0-9]*)$")
     public void estando_logados_como (String username) throws Throwable {
@@ -180,4 +197,38 @@ public class CalidadStepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
+
+    @Cuando("^añadimos el responsable ([a-z|A-Z|0-9]*)  al proyecto$")
+    public void añadimos_el_resposable_al_proyecto (String resposable)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+    @Entonces("^el responsable ([a-z|A-Z|0-9]*) no se listará en el  ([a-z|A-Z|0-9]*)$")
+    public void el_resposable_no_se_listara_en (String resposable)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+    @Pero("^el responsable ([a-z|A-Z|0-9]*) se visualizará en el listado de ([a-z|A-Z|0-9]*)$")
+    public void el_resposable_se_visualizara_en_el_listado_de (String responsable)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+    @Dado("^el proyecto ([a-z|A-Z|0-9]*) existe$")
+    public void el_proyecto_prueba_existe (String responsable)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
 }

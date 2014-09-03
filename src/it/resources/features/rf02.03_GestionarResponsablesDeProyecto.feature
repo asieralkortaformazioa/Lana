@@ -4,6 +4,18 @@ Característica: Gestionar Responsables de Proyecto
 
 
 
-  TODO
+  Antecedentes:
+    Dado el proyecto "ProyectoPrueba" existe
+
+  Escenario: Podrá gestionar los miembros o responsables de cada categoría
+    Dado estando en la página principal
+    Y se navega hasta "ProyectoPrueba"
+    Y se gestionan los responsables
+
+    Cuando añadimos el responsable "ResponsablePrueba" al proyecto
+    Entonces el responsable "ResponsablePrueba" no se listará en el "EncargadosCaf"
+    Pero el responsable "ResponsablePrueba" se visualizará en el listado de "responsablesActuales"
+
+
 
 

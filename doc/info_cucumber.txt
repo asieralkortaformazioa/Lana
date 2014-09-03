@@ -1,1 +1,6 @@
 mvn clean verify -Pacceptance-tests
+
+Run cukes:
+
+    IntellijIdea -->
+            Run --> Edit Debug Configurations --> Crear configuración de debug  para el TestRunner

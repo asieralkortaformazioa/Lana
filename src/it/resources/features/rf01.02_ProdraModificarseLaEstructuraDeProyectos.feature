@@ -14,12 +14,25 @@ Característica: Podrá modificarse la estructura de los proyectos
 
     Cuando se navega hasta "proyecto ejemplo"
     Entonces debería ver "proyecto ejemplo"
+    Y se visualizarán las unidades asociadas
+    Y se visualizarán los CheckLists asociados
 
 
     Cuando se añada una unidad
-    Entonces debería ver la nueva unidad en el listado
+    Entonces debería ver la nueva unidad en el listado de unidades
     Y deberá ver los coches de cada unidad con el tipo especificado
 
-    Cuando se edite la información de cabecera y se guarde
-    Entonces se deberá ver correctamente
 
+
+
+    Cuando se modifica el campo "Nombre" por "ProyectoPrueba"
+    Entonces en el campo "Nombre" se visualizará "ProyectoPrueba"
+
+    Cuando se modifica el campo "Fecha" por "31/12/2014"
+    Entonces en el campo "Fecha" se visualizará "31/12/2014"
+
+    Cuando se modifica el campo "Código" por "CodigoPrueba"
+    Entonces en el campo "Código" se visualizará "CodigoPrueba"
+
+    Cuando se modifica el campo "Descripción" por "DescripciónPrueba"
+    Entonces en el campo "Descripción" se visualizará "DescripciónPrueba"

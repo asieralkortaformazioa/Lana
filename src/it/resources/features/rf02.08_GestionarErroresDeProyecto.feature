@@ -1,14 +1,47 @@
 #language: es
-Característica: CheckLists finales
+Característica: Gestionar Errores de Proyecto
 
-El Responsable podrá crear Checklists Finales añadiendo errores predefinidos de Base de Datos o de Campos abiertos.
-Estos checklists estarán disponibles desde el botón de “ver checklist Final” de cada coche.
-
-Podrán ser exportados a excel.
+  Podrá gestionar las propiedades de cada error del proyecto, crearlos y borrarlos
 
 
+  Antecedentes:
 
 
-  TODO
+  Escenario:
+    Dado estando en la página "GestiónDeErrores"
+    Y se pulsa "CrearError"
+    Y se modifica el campo "Categoría" por "AISLAMIENTO"
+    Y se modifica el campo "Fecha" por "2014/12/31"
+    Y se modifica el campo "Descripción" por "ErrorPrueba"
+    Y se modifica el campo "TipoPrueba" por "TipoPrueba"
+    Y se modifica el campo "Código" por "CodigoPrueba"
+    Y se pulsa "Guardar"
+    Entonces el error "ErrorPrueba" se visualizará en el listado "ListadoErrores"
 
+    #Visualización
+    Dado estando en la página "GestiónDeErrores"
+    Y se navega hasta "ErrorPrueba"
+    Entonces en el campo "Categoría" se visualizará "AISLAMIENTO"
+    Y en el campo "Fecha" se visualizará "2014/12/31"
+    Y en el campo "Descripción" se visualizará "ErrorPrueba"
+    Y en el campo "TipoPrueba" se visualizará "TipoPrueba"
+    Y en el campo "Código" se visualizará "CodigoPrueba"
 
+    #Edición
+    Dado estando en la página "GestiónDeErrores"
+    Y se navega hasta "ErrorPrueba"
+    Y se modifica el campo "Categoría" por "COMPRAS"
+    Y se modifica el campo "Fecha" por "2015/01/01"
+    Y se modifica el campo "Descripción" por "ErrorPrueba2"
+    Y se modifica el campo "TipoPrueba" por "TipoPrueba2"
+    Y se modifica el campo "Código" por "CodigoPrueba2"
+    Entonces en el campo "Categoría" se visualizará "AISLAMIENTO"
+    Y en el campo "Fecha" se visualizará "2015/01/01"
+    Y en el campo "Descripción" se visualizará "ErrorPrueba2"
+    Y en el campo "TipoPrueba" se visualizará "TipoPrueba2"
+    Y en el campo "Código" se visualizará "CodigoPrueba2"
+
+    #Eliminación
+    Dado estando en la página "GestiónDeErrores"
+    Y se pulsa "EliminarError"
+    Entonces el error "ErrorPrueba" no se visualizará en el listado "ListadoErrores"

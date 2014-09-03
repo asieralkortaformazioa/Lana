@@ -9,7 +9,7 @@ Característica: Copiar estructura de proyectos
     Y estando logados como Responsable
     Y estamos editando un proyecto
 
-    Cuando copiamos la estructura de un proyecto
+    Cuando copiamos la estructura de "ProyectoPrueba"
     Entonces se generará la estructura en el proyecto actual
     Y tendrá las mismas unidades
     Y los mismos coches
