@@ -231,4 +231,33 @@ public class CalidadStepDefinitions {
         throw new PendingException();
     }
 
+
+
+
+
+    @Cuando("^en la tabla (\"(.*?)\")$ fila (\"(.*?)\")$ se modifica el campo (\"(.*?)\")$ a (\"(.*?)\")$")
+    public void en_la_tabla_fila_se_modifica_el_campo (String tabla, String fila, String campo, String valor)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @Entonces("^en la tabla (\"(.*?)\")$ fila (\"(.*?)\")$ el campo \"Estado\" tendrá el valor (\"(.*?)\")$ ")
+    public void en_la_tabla_fila_el_campo_tendra_el_valor (String tabla, String fila, String campo, String valor)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
+
+
+    @Entonces("^en la tabla (\"(.*?)\")$ fila (\"(.*?)\")$ se visualiza el valor (\"(.*?)\")$ en el campo (\"(.*?)\")$")
+    public void en_la_tabla_fila_se_modifica_el_campo_(String tabla, String fila, String valor, String campo)
+    {
+// Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+
 }
