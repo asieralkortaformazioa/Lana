@@ -23,7 +23,7 @@ Característica: Gestionar checkList del proyecto
     Y no se visualizará en el listado "ChecklistsGenerales"
 
 
-    TODO
+    # TODO
 
-    ... definir steps.
+    # ... definir steps.
 

@@ -29,6 +29,6 @@ Característica: Gestionar reportes, generar desglose de Errores Generales
 
     # Check Hito1
 
-    TODO Pasar Checklists
+    #TODO Pasar Checklists
 
 

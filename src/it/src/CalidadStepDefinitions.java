@@ -42,8 +42,6 @@ public class CalidadStepDefinitions {
         throw new PendingException();
     }
 
-
-
     @Dado("^un proyecto llamado (\"(.*?)\")$")
     public void un_proyecto_llamado_proyecto_ejemplo() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
@@ -51,20 +49,47 @@ public class CalidadStepDefinitions {
     }
 
 
-    @Y ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
+
+
     @Cuando ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
     public void se_modifica_el_campo_por (String nombreCampo, String valorCampo) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+        se_modifica_el_campo_por_gen (nombreCampo,valorCampo);
+    }
+
+//    @Y ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
+//    public void y_se_modifica_el_campo_por (String nombreCampo, String valorCampo) throws Throwable {
+//        // Write code here that turns the phrase above into concrete actions
+////        throw new PendingException();
+//        se_modifica_el_campo_por_gen (nombreCampo,valorCampo);
+//    }
+
+    public void se_modifica_el_campo_por_gen (String nombreCampo, String valorCampo) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
 
-    @Y("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
+
+
     @Entonces("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
     public void en_el_campo_se_visualizara  (String nombreCampo, String valorCampo) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
 
+//    @Y("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
+//    public void y_en_el_campo_se_visualizara  (String nombreCampo, String valorCampo) throws Throwable {
+//        // Write code here that turns the phrase above into concrete actions
+////        throw new PendingException();
+//        en_el_campo_se_visualizara_gen (nombreCampo,valorCampo);
+//    }
+
+    public void en_el_campo_se_visualizara_gen (String nombreCampo, String valorCampo) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+        en_el_campo_se_visualizara_gen (nombreCampo,valorCampo);
+    }
 
 
 

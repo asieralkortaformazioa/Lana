@@ -75,6 +75,6 @@ Característica: Propagar modificaciones en Coches posteriores
     Y en el campo "Descripción" se visualizará "DescripciónPrueba2"
 
 
-    TODO añadir Cambios en Checklists
+    # TODO añadir Cambios en Checklists
 
 

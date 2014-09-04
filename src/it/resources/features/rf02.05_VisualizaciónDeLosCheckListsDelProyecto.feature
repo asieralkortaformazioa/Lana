@@ -21,8 +21,8 @@ Característica: Visualización de los checkLists del proyecto.
 
 
 
-  TODO
-  Añadir datos de checklists
-  Añadir checks de Códigos de colores
+  #TODO
+  # Añadir datos de checklists
+  # Añadir checks de Códigos de colores
 
 
