@@ -1,3 +1,5 @@
+package net.caf.tests.stepdefs;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -167,4 +169,19 @@ public class CalidadStepDefinitions {
 		// Write code here that turns the phrase above into concrete actions
 		throw new PendingException();
 	}
+//
+//	@Dado("^estando en la página ((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?)$")
+//	public void estamos_en_la_página_url(String url) {
+//		System.out.println("Url:" + url);
+//		// Write code here that turns the phrase above into concrete actions
+//		throw new PendingException();
+//	}
+//
+//	@Dado("^estando en la página ([a-z|A-Z|0-9]*)$")
+//	public void estamos_en_la_página_nombre(String url) {
+//		System.out.println("Url:" + url);
+//		// Write code here that turns the phrase above into concrete actions
+//		throw new PendingException();
+//	}
+
 }

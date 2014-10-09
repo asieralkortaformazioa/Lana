@@ -8,7 +8,7 @@ Característica: Gestionar Errores de Proyecto
 
 
   Escenario:
-    Dado estando en la página "GestiónDeErrores"
+    Dado estando en la página "GestionDeErrores"
     Y se pulsa "CrearError"
     Y se modifica el campo "Categoría" por "AISLAMIENTO"
     Y se modifica el campo "Fecha" por "2014/12/31"
@@ -16,7 +16,7 @@ Característica: Gestionar Errores de Proyecto
     Y se modifica el campo "TipoPrueba" por "TipoPrueba"
     Y se modifica el campo "Código" por "CodigoPrueba"
     Y se pulsa "Guardar"
-    Entonces el error "ErrorPrueba" se visualizará en el listado "ListadoErrores"
+    Entonces en el listado "ListadoErrores" no se visualizará "ErrorPrueba"
 
     #Visualización
     Dado estando en la página "GestiónDeErrores"
@@ -44,4 +44,4 @@ Característica: Gestionar Errores de Proyecto
     #Eliminación
     Dado estando en la página "GestiónDeErrores"
     Y se pulsa "EliminarError"
-    Entonces el error "ErrorPrueba" no se visualizará en el listado "ListadoErrores"
+    Entonces en el listado "ListadoErrores" no se visualizará "ErrorPrueba"

@@ -18,9 +18,10 @@
         <cucumber.version>1.1.8</cucumber.version>
         <junit.version>4.11</junit.version>
         <failsafe-plugin.version>2.17</failsafe-plugin.version>
-        <selenium-java.version>2.42.2</selenium-java.version>
+        <selenium-java.version>2.43.1</selenium-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cucumber.options>--format pretty --tags @wip</cucumber.options>
+        <cuke4duke.version>0.4.3</cuke4duke.version>
     </properties>
 
     <repositories>
@@ -117,6 +118,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>net.caf.utils</groupId>
+            <artifactId>legacyUtils</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- ******************************************************************************** -->
         <!-- Librerías de testing -->
         <!-- ******************************************************************************** -->
@@ -157,6 +163,7 @@
                 <version>1.1.8</version>
                 <scope>test</scope>
             </dependency>
+            <!--
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-java</artifactId>
@@ -182,18 +189,28 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-firefox-driver</artifactId>
                 <version>2.42.2</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-server</artifactId>
+                <version>2.43.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.caf.utils</groupId>
+                <artifactId>legacyUtils</artifactId>
+                <version>1.0.2-SNAPSHOT</version>
+            </dependency>
 
 
         </dependencies>
     </dependencyManagement>
-
-
 
 
     <profiles>
@@ -208,6 +225,7 @@
             </properties>
             <build>
                 <plugins>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-failsafe-plugin</artifactId>
@@ -222,7 +240,9 @@
                         </executions>
                         <configuration>
                             <!-- <testSourceDirectory>features</testSourceDirectory> -->
-
+                            <suiteXmlFiles>
+                                <suiteXmlFile>src/it/resources/testng.xml</suiteXmlFile>
+                            </suiteXmlFiles>
                             <systemPropertyVariables>
                                 <cucumber.options>${cucumber.options}</cucumber.options>
                             </systemPropertyVariables>
