@@ -16,6 +16,7 @@
         <!-- manepos de nombres de página -->
         <property name="GestionDeErrores">/pluto/portal/gestionErrores</property>
         <property name="Login">/pluto/portal</property>
+        <property name="AboutPluto">/pluto/portal/About%20Apache%20Pluto</property>
     </section>
 
 </config>
