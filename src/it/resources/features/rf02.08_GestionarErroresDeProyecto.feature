@@ -5,7 +5,7 @@ Característica: Gestionar Errores de Proyecto
 
 
   Antecedentes:
-
+    Dado vamos a la página "Login"
 
   Escenario:
     Dado estando en la página "GestionDeErrores"

@@ -4,6 +4,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 
 import java.util.concurrent.TimeUnit;
 
+import net.caf.selenium.SeleniumSingleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,35 +30,38 @@ import cucumber.api.java.es.Entonces;
  */
 public class GeneralStepDefinitions {
 
-	//	private DefaultSelenium seleniumClient = new DefaultSelenium("localhost", 4444, "*firefox", "http://localhost:8080");
-	WebDriver driver = new FirefoxDriver();
-	Selenium selenium = null;
-	private static final String TIMEOUT_PAGE_LOAD = "2000";
 
 	@Before
 	public void initSelenium() throws Exception {
-		System.out.println("initSelenium");
+		System.out.println("Before General steps");
+//
+//		selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/pluto/portal");
+//		selenium.start();
+//		WebDriver driver = ((WrapsDriver) selenium).getWrappedDriver();
+//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//		System.out.println("Getting google");
+		SeleniumSingleton.init();
 
-		selenium = new WebDriverBackedSelenium(driver, "http://localhost:8080/pluto/portal");
-		selenium.start();
-		WebDriver driver = ((WrapsDriver) selenium).getWrappedDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		System.out.println("Getting google");
-		driver.get("http://www.google.com");
+		SeleniumSingleton.getDriver().get("http://www.google.com");
+//		driver.get("http://www.google.com");
 		//		selenium.start();
+
+
+
 	}
 
 	@After
 	public void destroySelenium() {
-		selenium.stop();
-		driver.quit(); // quit is a webdriver method.
+		SeleniumSingleton.stop();
+//		selenium.stop();
+//		driver.quit(); // quit is a webdriver method.
 	}
 
 	@Dado("^estando en la página ((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?)$")
 	public void estamos_en_la_pagina_url(String url) {
 		System.out.println("Url:" + url);
-		selenium.open(url);
-		selenium.waitForPageToLoad(TIMEOUT_PAGE_LOAD);
+		SeleniumSingleton.getSelenium().open(url);
+		SeleniumSingleton.getSelenium().waitForPageToLoad(SeleniumSingleton.TIMEOUT_PAGE_LOAD);
 	}
 
 	@Dado("^estando en la página ([a-z|A-Z|0-9]*)$")
@@ -120,7 +124,10 @@ public class GeneralStepDefinitions {
 	@Dado("^estando logados como ([a-z|A-Z|0-9]*)$")
 	public void estando_logados_como(String username) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+		//throw new PendingException();
+
+
+
 	}
 
 	@Cuando("^vamos a la página (((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?))$")
@@ -156,7 +163,7 @@ public class GeneralStepDefinitions {
 	}
 
 	public void esperarA(String id) {
-		Wait<WebDriver> wait = new WebDriverWait(driver, 30);
+		Wait<WebDriver> wait = new WebDriverWait(SeleniumSingleton.getDriver(), 30);
 		WebElement element = wait.until(visibilityOfElementLocated(By.id(id)));
 	}
 

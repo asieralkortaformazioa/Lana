@@ -15,6 +15,7 @@
     <section name="CONFIGURATION">
         <!-- manepos de nombres de página -->
         <property name="GestionDeErrores">/pluto/portal/gestionErrores</property>
+        <property name="Login">/pluto/portal</property>
     </section>
 
 </config>
