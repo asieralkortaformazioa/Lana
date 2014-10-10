@@ -20,7 +20,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		features = { "src/it/resources/genericCrudFeatures/" }, // features folder"
 		format = { "html:target/cucumber - html  - report", "json:target/cucumber - json - report.json" },
 		glue = { "net.caf.tests.stepdefs" },
-		tags = { "@GenericCrud" })
+		tags = { "@GenericCrud", "@active" })
 @Test
 public class GenericCrudCucumberTestRunnerTestNg extends
 		AbstractTestNGCucumberTests {

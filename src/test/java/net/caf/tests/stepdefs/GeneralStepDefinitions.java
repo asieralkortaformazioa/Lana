@@ -190,4 +190,6 @@ public class GeneralStepDefinitions {
 		System.out.println("Pantalla capturada: " + name);
 		System.out.println("Fichero:\n" + screenshotName);
 	}
+
+
 }

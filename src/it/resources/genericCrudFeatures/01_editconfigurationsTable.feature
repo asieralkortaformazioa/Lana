@@ -1,6 +1,6 @@
 #language: es
 @GenericCrud
-Característica: Crud Edición de configuración de portlet
+Característica: Edición de configuración de portlet
 
   Se comprueba que la configuración funciona correctamente.
 
@@ -35,8 +35,6 @@ Característica: Crud Edición de configuración de portlet
     Y el campo "restServiceUrl" deberá tener el valor "http://localhost:8080/GenericCrud-restService-1.0-SNAPSHOT/GenericCrud-restService/GenericCrudSvc"
     Y capturar Pantalla "FinalTest"
 
-
-
     #Comprobar estructura de CategoríaCaf en View
     Dado estando en la página "TestGenericCrud"
     Y se selecciona el modo de portlet "VIEW" en el combo "//form[@name='modeSelectionForm']/select"
@@ -44,3 +42,6 @@ Característica: Crud Edición de configuración de portlet
     Y se debería ver el texto "DESCRIPCION"
     Y se debería ver el texto "ID:"
     Y se debería ver el texto "NOMBRE:"
+
+
+

@@ -17,6 +17,7 @@
     <properties>
         <cucumber.version>1.1.8</cucumber.version>
         <junit.version>4.11</junit.version>
+
         <failsafe-plugin.version>2.17</failsafe-plugin.version>
         <selenium-java.version>2.43.1</selenium-java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -145,100 +146,101 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+
         <!-- ******************************************************************************** -->
         <!-- Librerías de testing -->
         <!-- ******************************************************************************** -->
 
     </dependencies>
 
-<!--
-    <dependencyManagement>
+    <!--
+        <dependencyManagement>
 
-        <dependencies>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>6.8.8</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>1.9.5</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>info.cukes</groupId>
-                <artifactId>cucumber-java</artifactId>
-                <version>1.1.8</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>info.cukes</groupId>
-                <artifactId>cucumber-testng</artifactId>
-                <version>1.1.8</version>
-                <scope>test</scope>
-            </dependency>
-            /////
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-java</artifactId>
-                <version>2.42.2</version>
-                <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.seleniumhq.selenium</groupId>
-                        <artifactId>selenium-chrome-driver</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.seleniumhq.selenium</groupId>
-                        <artifactId>selenium-ie-driver</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.seleniumhq.selenium</groupId>
-                        <artifactId>selenium-safari-driver</artifactId>
-                    </exclusion>
+            <dependencies>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <version>3.0.1</version>
+                    <scope>provided</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.testng</groupId>
+                    <artifactId>testng</artifactId>
+                    <version>6.8.8</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-all</artifactId>
+                    <version>1.9.5</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>info.cukes</groupId>
+                    <artifactId>cucumber-java</artifactId>
+                    <version>1.1.8</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>info.cukes</groupId>
+                    <artifactId>cucumber-testng</artifactId>
+                    <version>1.1.8</version>
+                    <scope>test</scope>
+                </dependency>
+                /////
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-java</artifactId>
+                    <version>2.42.2</version>
+                    <scope>test</scope>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-chrome-driver</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-ie-driver</artifactId>
+                        </exclusion>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-safari-driver</artifactId>
+                        </exclusion>
 
-                    <exclusion>
-                        <groupId>org.seleniumhq.selenium</groupId>
-                        <artifactId>selenium-htmlunit-driver</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            /////
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-firefox-driver</artifactId>
-                <version>${selenium-java.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.seleniumhq.selenium</groupId>
-                <artifactId>selenium-server</artifactId>
-                <version>${selenium-java.version}</version>
-            </dependency>
+                        <exclusion>
+                            <groupId>org.seleniumhq.selenium</groupId>
+                            <artifactId>selenium-htmlunit-driver</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+                /////
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-firefox-driver</artifactId>
+                    <version>${selenium-java.version}</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-server</artifactId>
+                    <version>${selenium-java.version}</version>
+                </dependency>
 
-            <dependency>
-                <groupId>net.caf.utils</groupId>
-                <artifactId>legacyUtils</artifactId>
-                <version>1.0.2-SNAPSHOT</version>
-            </dependency>
+                <dependency>
+                    <groupId>net.caf.utils</groupId>
+                    <artifactId>legacyUtils</artifactId>
+                    <version>1.0.2-SNAPSHOT</version>
+                </dependency>
 
-            <dependency>
-                <groupId>net.caf.utils</groupId>
-                <artifactId>TestCommons</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
+                <dependency>
+                    <groupId>net.caf.utils</groupId>
+                    <artifactId>TestCommons</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
 
-        </dependencies>
-    </dependencyManagement>
-    -->
+            </dependencies>
+        </dependencyManagement>
+        -->
 
 
     <profiles>
@@ -285,41 +287,41 @@
                             <skip>true</skip>
                         </configuration>
                     </plugin>
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>build-helper-maven-plugin</artifactId>
-                            <version>1.7</version>
-                            <executions>
-                                <execution>
-                                    <id>add-source</id>
-                                    <phase>generate-sources</phase>
-                                    <goals>
-                                        <goal>add-test-source</goal>
-                                    </goals>
-                                    <configuration>
-                                        <sources>
-                                            <source>src/it/java</source>
-                                        </sources>
-                                    </configuration>
-                                </execution>
-                                <execution>
-                                    <id>add-resource</id>
-                                    <phase>generate-sources</phase>
-                                    <goals>
-                                        <goal>add-test-resource</goal>
-                                    </goals>
-                                    <configuration>
-                                        <resources>
-                                            <resource>
-                                                <directory>src/it/resources</directory>
-                                            </resource>
-                                        </resources>
-                                    </configuration>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </build>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <id>add-source</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>add-test-source</goal>
+                                </goals>
+                                <configuration>
+                                    <sources>
+                                        <source>src/it/java</source>
+                                    </sources>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>add-resource</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>add-test-resource</goal>
+                                </goals>
+                                <configuration>
+                                    <resources>
+                                        <resource>
+                                            <directory>src/it/resources</directory>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
 
         </profile>
     </profiles>
