@@ -3,9 +3,9 @@
 <suite name="Suite1" verbose="1" >
 
     <!--
-  <parameter name="selenium.interactive" value="interactive" />
-  <parameter name="selenium.singleWindow" value="singleWindow" />
-  -->
+      <parameter name="selenium.interactive" value="interactive" />
+      <parameter name="selenium.singleWindow" value="singleWindow" />
+    -->
     <!--
     <parameter name="selenium.host" value="localhost" />
     <parameter name="selenium.port" value="4444" />
@@ -16,21 +16,21 @@
     <!-- <parameter name="selenium.firefoxProfileTemplate" value="/home/developer/.mozilla/firefox/tmw71iqr.selenium" />-->
     <!-- <parameter name="selenium.out" value="seleninumResult.html" />-->
 
-
-
-
     <test name="CucumberTest" >
+        <!-- -->
+        <groups>
+            <run>
+                <!-- <include name="gestionDatos"/>-->
+                <!-- --><include name="GenericCrud"/>
+                <!-- <exclude name="GenericCrud"/>-->
+            </run>
+        </groups>
+
+
         <classes>
-            <class name="net.caf.tests.runners.CucumberTestRunnerTestNg2" />
+            <class name="net.caf.tests.runners.FeatureCucumberTestRunnerTestNg" />
+            <class name="net.caf.tests.runners.GenericCrudCucumberTestRunnerTestNg" />
         </classes>
     </test>
 
-    <!--
-    <test name="Regression1">
-        <classes>
-            <class name="test.sample.ParameterSample"/>
-            <class name="test.sample.ParameterTest"/>
-        </classes>
-    </test>
-    -->
 </suite>
