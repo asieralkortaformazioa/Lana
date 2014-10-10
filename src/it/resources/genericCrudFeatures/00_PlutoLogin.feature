@@ -1,13 +1,10 @@
 #language: es
-@GenericCrud
-Característica: Gestionar Errores de Proyecto
+@init
+Característica: Test de Login en Pluto
 
-  Podrá gestionar las propiedades de cada error del proyecto, crearlos y borrarlos
-
+  Test de Login en Pluto
 
   Antecedentes:
-
-
 
   Escenario:
     Dado estando en la página "Login"

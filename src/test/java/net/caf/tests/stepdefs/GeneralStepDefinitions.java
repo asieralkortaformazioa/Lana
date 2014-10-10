@@ -64,18 +64,6 @@ public class GeneralStepDefinitions {
 		SeleniumSingleton.getSelenium().waitForPageToLoad(SeleniumSingleton.TIMEOUT_PAGE_LOAD);
 	}
 
-	//	@Dado("^estando en la página ([a-z|A-Z|0-9]*)$")
-	//	public void estamos_en_la_pagina_nombre(String nombrePagina) throws B2BException {
-	//		System.out.println("Url:" + nombrePagina);
-	//		String url = ConfigManager.getProperty(nombrePagina);
-	//		estamos_en_la_pagina_url(url);
-	//	}
-	//	@Dado("^estando en la página \"(.*?)\"$")
-	//	public void estando_en_la_página(String arg1) throws Throwable {
-	//		System.out.println("Url:" + arg1);
-	//		String url = ConfigManager.getProperty(arg1);
-	//		estamos_en_la_pagina_url(url);
-	//	}
 	@Dado("^se modifica el campo \"(.*?)\" por \"(.*?)\"$")
 	public void dado_se_modifica_el_campo_por(String arg1, String arg2) throws Throwable {
 		esperarA(arg1);
@@ -96,28 +84,10 @@ public class GeneralStepDefinitions {
 		throw new PendingException();
 	}
 
-	//    @Y ("^se modifica el campo (\"(.*?)\")$ por (\"(.*?)\")$")
-	//    public void y_se_modifica_el_campo_por (String nombreCampo, String valorCampo) throws Throwable {
-	//        // Write code here that turns the phrase above into concrete actions
-	////        throw new PendingException();
-	//        se_modifica_el_campo_por_gen (nombreCampo,valorCampo);
-	//    }
 	public void se_modifica_el_campo_por_gen(String nombreCampo, String valorCampo) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		throw new PendingException();
 		SeleniumUtils.typeFocusAndHighlight(SeleniumSingleton.getSelenium(), nombreCampo, valorCampo);
-	}
-
-	//    @Y("^en el campo (\"(.*?)\")$ se visualizará (\"(.*?)\")$")
-	//    public void y_en_el_campo_se_visualizara  (String nombreCampo, String valorCampo) throws Throwable {
-	//        // Write code here that turns the phrase above into concrete actions
-	////        throw new PendingException();
-	//        en_el_campo_se_visualizara_gen (nombreCampo,valorCampo);
-	//    }
-	public void en_el_campo_se_visualizara_gen(String nombreCampo, String valorCampo) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-		//		en_el_campo_se_visualizara_gen(nombreCampo, valorCampo);
 	}
 
 	@Dado("^estando logados como ([a-z|A-Z|0-9]*)$")
@@ -148,19 +118,15 @@ public class GeneralStepDefinitions {
 		throw new PendingException();
 	}
 
-	@Entonces("^debería ver \"(.*?)\"$")
-	public void debería_ver(String arg1) throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		esperarA(arg1);
-		throw new PendingException();
-	}
 
-	@Entonces("^\tse (tiene que|debería) ver el texto \"(.*?)\"$")
+	@Entonces("^se (tiene que|debería) ver el texto \"(.*?)\"$")
 	public void debería_ver_texto(String m1, String text) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		esperarA(arg1);
-		if (SeleniumUtils.checkTextPresent(SeleniumSingleton.getSelenium(), text)) {
-			throw new Exception("Text Not present " + text);
+		boolean res = (SeleniumUtils.checkTextPresent(SeleniumSingleton.getSelenium(), SeleniumSingleton.getDriver(), text));
+		if (!res) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_campo_debera_tener_el_valor", "");
+			throw new Exception("Text Not present " + text + " Captura:\n" + screenshotName + "\n");
 		}
 	}
 
@@ -179,14 +145,49 @@ public class GeneralStepDefinitions {
 		WebElement element = wait.until(visibilityOfElementLocated(By.id(id)));
 	}
 
-	//	@Y("^se pulsa \"(.*?)\"$")
-	//	public void y_se_pulsa(String arg1) throws Throwable {
-	//		se_pulsa(arg1);
-	//	}
 	@Entonces("^en el listado \"(.*?)\" (?:no) se visualizará \"(.*?)\"$")
 	public void en_el_listado_no_se_visualizara(String listId, String negate, String value) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		esperarA(listId);
 		throw new PendingException();
+	}
+
+	@Dado("^estando logado en el entorno \"(.*?)\" en la página \"(.*?)\" como \"(.*?)\" con password \"(.*?)\"$")
+	public void estando_logado_en_el_entorno_en_la_pagina_como_con_password(String entorno, String pagina, String user, String pwd) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		String url = ConfigManager.getProperty(pagina);
+		estamos_en_la_pagina_url(url);
+		dado_se_modifica_el_campo_por("j_username", user);
+		dado_se_modifica_el_campo_por("j_password", pwd);
+		se_pulsa("j_login");
+	}
+
+	@Dado("^se selecciona \"(.*?)\" en el combo \"(.*?)\"$")
+	public void se_selecciona_en_el_combo(String id, String value) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		SeleniumUtils.selectFocusAndHighlightComboElementByVisibleText(SeleniumSingleton.getDriver(), SeleniumSingleton.getSelenium(), id, value);
+	}
+
+	@Dado("^se selecciona el modo de portlet \"(.*?)\" en el combo \"(.*?)\"$")
+	public void se_selecciona_el_modo_de_portlet_en_el_combo(String value, String id) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		SeleniumUtils.selectFocusAndHighlightComboElementByVisibleText(SeleniumSingleton.getDriver(), SeleniumSingleton.getSelenium(), id, value);
+		SeleniumUtils.waitForPageLoad(SeleniumSingleton.getDriver());
+	}
+
+	@Entonces("^el campo \"(.*?)\" deberá tener el valor \"(.*?)\"$")
+	public void el_campo_debera_tener_el_valor(String id, String value) throws Throwable {
+		boolean ok = SeleniumUtils.checkInputTextValue(SeleniumSingleton.getDriver(), id, value);
+		if (!ok) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_campo_debera_tener_el_valor", "");
+			throw new Exception("El campo " + id + " no contiene el valor " + value + "\nCaptura de pantalla en :\n" + screenshotName + "\n");
+		}
+	}
+
+	@Entonces("^capturar Pantalla \"(.*?)\"$")
+	public void capturar_pantalla(String name) throws Throwable {
+		String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), name, "");
+		System.out.println("Pantalla capturada: " + name);
+		System.out.println("Fichero:\n" + screenshotName);
 	}
 }
