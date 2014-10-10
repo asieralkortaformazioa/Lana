@@ -168,7 +168,7 @@ public class GeneralStepDefinitions {
 	public void se_pulsa(String arg1) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		esperarA(arg1);
-		SeleniumUtils.waitTime(3000);
+		SeleniumUtils.waitThreadTime(3000);
 		SeleniumUtils.clickFocusAndHighlight(SeleniumSingleton.getSelenium(), arg1);
 		SeleniumSingleton.waitForPageToLoad();
 		//		throw new PendingException();
