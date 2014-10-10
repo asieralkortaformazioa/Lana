@@ -1,5 +1,5 @@
 #language: es
-@GenericCrud
+@GenericCrud @active
 Característica: Crud de portlet genérico
 
   Se comprueba la LECTURA  ACTUALIZACIÓN  de las CategoríasCaf
