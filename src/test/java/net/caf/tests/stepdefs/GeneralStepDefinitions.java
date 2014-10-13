@@ -96,14 +96,14 @@ public class GeneralStepDefinitions {
 		//throw new PendingException();
 	}
 
-	@Cuando("^(vamos a|estando en) la página (((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?))$")
-	public void vamos_a_la_pagina_url(String m1, String url) throws Throwable {
+	@Cuando("^(?:vamos a|estando en) la página (((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?))$")
+	public void vamos_a_la_pagina_url(String url) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		estamos_en_la_pagina_url(url);
 		//		throw new PendingException();
 	}
 
-	@Cuando("^(vamos a|estando en) la página \"(.*?)\"$")
+	@Cuando("^(?:vamos a|estando en) la página \"(.*?)\"$")
 	public void vamos_a_la_pagina_nombre(String m1, String name) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		throw new PendingException();
@@ -118,8 +118,7 @@ public class GeneralStepDefinitions {
 		throw new PendingException();
 	}
 
-
-	@Entonces("^se (tiene que|debería) ver el texto \"(.*?)\"$")
+	@Entonces("^se (?:tiene que|debería) ver el texto \"(.*?)\"$")
 	public void debería_ver_texto(String m1, String text) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		esperarA(arg1);
@@ -145,7 +144,7 @@ public class GeneralStepDefinitions {
 		WebElement element = wait.until(visibilityOfElementLocated(By.id(id)));
 	}
 
-	@Entonces("^en el listado \"(.*?)\" (?:no) se visualizará \"(.*?)\"$")
+	@Entonces("^en el listado \"(.*?)\"( no|^) se visualizará \"(.*?)\"$")
 	public void en_el_listado_no_se_visualizara(String listId, String negate, String value) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		esperarA(listId);
@@ -162,10 +161,14 @@ public class GeneralStepDefinitions {
 		se_pulsa("j_login");
 	}
 
-	@Dado("^se selecciona \"(.*?)\" en el combo \"(.*?)\"$")
-	public void se_selecciona_en_el_combo(String id, String value) throws Throwable {
+	@Dado("^se selecciona \"(.*?)\" en el (combo|listado) \"(.*?)\"$")
+	public void se_selecciona_en_el_combo(String id, String tipoSeleccion, String value) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		SeleniumUtils.selectFocusAndHighlightComboElementByVisibleText(SeleniumSingleton.getDriver(), SeleniumSingleton.getSelenium(), id, value);
+		if ("combo".equals(tipoSeleccion)) {
+			SeleniumUtils.selectFocusAndHighlightComboElementByVisibleText(SeleniumSingleton.getDriver(), SeleniumSingleton.getSelenium(), id, value);
+		} else if ("listado".equals(tipoSeleccion)) {
+			SeleniumUtils.selectFocusAndHighlightComboElementByVisibleText(SeleniumSingleton.getDriver(), SeleniumSingleton.getSelenium(), id, value);
+		}
 	}
 
 	@Dado("^se selecciona el modo de portlet \"(.*?)\" en el combo \"(.*?)\"$")
@@ -191,5 +194,40 @@ public class GeneralStepDefinitions {
 		System.out.println("Fichero:\n" + screenshotName);
 	}
 
+	@Entonces("^en el combo \"(.*?)\" el valor seleccionado será \"(.*?)\"$")
+	public void en_el_combo_el_valor_seleccionado_sera(String id, String value) throws Exception {
+		boolean ok = SeleniumUtils.checkComboValue(SeleniumSingleton.getDriver(), id, value);
+		if (!ok) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_combo_debera_tener_el_valor", "");
+			throw new Exception("El combo " + id + " no contiene el valor " + value + "\nCaptura de pantalla en :\n" + screenshotName + "\n");
+		}
+	}
 
+	@Entonces("^el listado \"(.*?)\" está vacío$")
+	public void el_listado_esta_vacio(String id) throws Exception {
+		int count = SeleniumUtils.getComboValueNumber(SeleniumSingleton.getDriver(), id);
+		if (count > 0) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_listado_esta_vacio", "");
+			throw new Exception("El listado " + id + " no está vacío.\nCaptura de pantalla en :\n" + screenshotName + "\n");
+		}
+	}
+
+	@Entonces("^el listado \"(.*?)\" contiene  (\\d+) valores$")
+	public void el_listado_contiene_valores(String id, Integer number) throws Exception {
+		int count = SeleniumUtils.getComboValueNumber(SeleniumSingleton.getDriver(), id);
+		if (count == number) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_listado_contiene_valores", "");
+			throw new Exception("El listado " + id + " no contiene " + number + "valores, sino " + count + ".\nCaptura de pantalla en :\n" + screenshotName + "\n");
+		}
+	}
+
+	@Entonces("^el listado \"(.*?)\"( no|^) contiene el valor \"(.*?)\"$")
+	public void el_listado_contiene_el_valor(String id, String negate, String option) throws Exception {
+		boolean ok = SeleniumUtils.comboContainsOption(SeleniumSingleton.getDriver(), id, option);
+		boolean negation = "no".equals(negate);
+		if (!negation == ok) {
+			String screenshotName = SeleniumUtils.takeScreenshot(SeleniumSingleton.getDriver(), "el_listado_contiene_el_valor", "");
+			throw new Exception("El listado " + id + " " + negate + " contiene el valor " + option + ".\nCaptura de pantalla en :\n" + screenshotName + "\n");
+		}
+	}
 }

@@ -14,7 +14,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 @RunWith(Cucumber.class)
 //    @Cucumber.Options(format={"pretty", "html:target/cucumber"})
 @CucumberOptions(
-		features = "src/it/resources/features/rf02.08_GestionarErroresDeProyecto.feature.wip",
+		features = "src/it/resources/features/rf02.08_GestionarErroresDeProyecto.feature",
 		format = { "html:target/cucumber - html  - report", "json:target/cucumber - json - report.json" },
 		glue = { "net.caf.tests.stepdefs" })
 public class CucumberTestRunner {

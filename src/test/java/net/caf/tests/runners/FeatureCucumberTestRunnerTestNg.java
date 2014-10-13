@@ -12,7 +12,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
  */
 // Associates Cucumber JVM with the JUnit runner
 @CucumberOptions(
-//features = "features/rf02.08_GestionarErroresDeProyecto.feature.wip",
+//features = "features/rf02.08_GestionarErroresDeProyecto.feature",
 //		features = "features/rf00.00_Login.feature",
 features = { "src/it/resources/features/" },// "genericCrudFeatures/","features/"
 format = { "html:target/cucumber - html  - report", "json:target/cucumber - json - report.json" },

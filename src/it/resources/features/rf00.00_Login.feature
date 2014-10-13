@@ -1,5 +1,5 @@
 #language: es
-@gestionDatos
+@gestionDatos #@active
 Característica: Gestionar Errores de Proyecto
 
   Podrá gestionar las propiedades de cada error del proyecto, crearlos y borrarlos
