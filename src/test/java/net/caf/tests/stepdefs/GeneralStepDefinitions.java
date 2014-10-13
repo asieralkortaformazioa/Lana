@@ -2,6 +2,7 @@ package net.caf.tests.stepdefs;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
+import cucumber.api.java.es.Y;
 import net.caf.selenium.SeleniumSingleton;
 import net.caf.selenium.SeleniumUtils;
 
@@ -97,14 +98,14 @@ public class GeneralStepDefinitions {
 	}
 
 	@Cuando("^(?:vamos a|estando en) la página (((https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\\/\\w \\.-]*)*\\/?))$")
-	public void vamos_a_la_pagina_url(String url) throws Throwable {
+	public void vamos_a_la_pagina_url( String url) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		estamos_en_la_pagina_url(url);
 		//		throw new PendingException();
 	}
 
 	@Cuando("^(?:vamos a|estando en) la página \"(.*?)\"$")
-	public void vamos_a_la_pagina_nombre(String m1, String name) throws Throwable {
+	public void vamos_a_la_pagina_nombre(String name) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		throw new PendingException();
 		System.out.println("Url:" + name);
@@ -119,7 +120,7 @@ public class GeneralStepDefinitions {
 	}
 
 	@Entonces("^se (?:tiene que|debería) ver el texto \"(.*?)\"$")
-	public void debería_ver_texto(String m1, String text) throws Throwable {
+	public void debería_ver_texto( String text) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		//		esperarA(arg1);
 		boolean res = (SeleniumUtils.checkTextPresent(SeleniumSingleton.getSelenium(), SeleniumSingleton.getDriver(), text));
@@ -143,8 +144,8 @@ public class GeneralStepDefinitions {
 		Wait<WebDriver> wait = new WebDriverWait(SeleniumSingleton.getDriver(), 30);
 		WebElement element = wait.until(visibilityOfElementLocated(By.id(id)));
 	}
-
-	@Entonces("^en el listado \"(.*?)\"( no|^) se visualizará \"(.*?)\"$")
+//( no|^)
+	@Entonces("^en el listado \"(.*?)\"( no)? se visualizará \"(.*?)\"$")
 	public void en_el_listado_no_se_visualizara(String listId, String negate, String value) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		esperarA(listId);
@@ -212,7 +213,7 @@ public class GeneralStepDefinitions {
 		}
 	}
 
-	@Entonces("^el listado \"(.*?)\" contiene  (\\d+) valores$")
+	@Entonces("^el listado \"(.*?)\" contiene  (\\d+) valor(es)?$")
 	public void el_listado_contiene_valores(String id, Integer number) throws Exception {
 		int count = SeleniumUtils.getComboValueNumber(SeleniumSingleton.getDriver(), id);
 		if (count == number) {
@@ -221,7 +222,7 @@ public class GeneralStepDefinitions {
 		}
 	}
 
-	@Entonces("^el listado \"(.*?)\"( no|^) contiene el valor \"(.*?)\"$")
+	@Entonces("^el listado \"(.*?)\"( no)? contiene el valor \"(.*?)\"$")
 	public void el_listado_contiene_el_valor(String id, String negate, String option) throws Exception {
 		boolean ok = SeleniumUtils.comboContainsOption(SeleniumSingleton.getDriver(), id, option);
 		boolean negation = "no".equals(negate);

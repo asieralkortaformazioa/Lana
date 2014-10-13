@@ -3,7 +3,7 @@ package net.caf.tests.runners;
 import java.io.IOException;
 
 import net.caf.selenium.SeleniumSingleton;
-
+import net.caf.selenium.SeleniumUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Test;
@@ -32,6 +32,7 @@ public class GenericCrudCucumberTestRunnerTestNg extends
 	@Test(groups = { "GenericCrud" })
 	@Override
 	public void run_cukes() throws IOException {
+		SeleniumUtils.cleanScreenshotDir();
 		super.run_cukes();
 		//		... get scenario results... reports....
 	}

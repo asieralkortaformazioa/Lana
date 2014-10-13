@@ -4,3 +4,13 @@ Run cukes:
 
     IntellijIdea -->
             Run --> Edit Debug Configurations --> Crear configuración de debug  para el TestRunner
+
+
+
+Execute acceptance tests with maven
+------------------------------------
+
+mvn -Pcaf,acceptance-tests clean package integration-test
+
+
+

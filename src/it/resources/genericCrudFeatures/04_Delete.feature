@@ -1,6 +1,6 @@
 #language: es
 @GenericCrud
-Característica: Crud de portlet genérico
+Característica: Crud de portlet genérico - Delete
 
   Se comprueba el BORRADO de las CategoríasCaf
 

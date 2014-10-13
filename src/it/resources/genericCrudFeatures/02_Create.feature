@@ -1,6 +1,6 @@
 #language: es
 @GenericCrud @active
-Característica: Crud de portlet genérico
+Característica: Crud de portlet genérico - Create
 
   Se comprueba la LECTURA CREACIÓN de las CategoríasCaf
 

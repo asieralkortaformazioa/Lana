@@ -2,6 +2,8 @@ package net.caf.tests.runners;
 
 import java.io.IOException;
 
+import net.caf.selenium.SeleniumUtils;
+
 import org.testng.annotations.Test;
 
 import cucumber.api.CucumberOptions;
@@ -15,9 +17,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 //features = "features/rf02.08_GestionarErroresDeProyecto.feature",
 //		features = "features/rf00.00_Login.feature",
 features = { "src/it/resources/features/" },// "genericCrudFeatures/","features/"
-format = { "html:target/cucumber - html  - report", "json:target/cucumber - json - report.json" },
-		glue = { "net.caf.tests.stepdefs" },
-		tags = { "@gestionDatos" })
+format = { "html:target/cucumber - html  - report", "json:target/cucumber - json - report.json" }, glue = { "net.caf.tests.stepdefs" }, tags = { "@gestionDatos" })
 @Test
 public class FeatureCucumberTestRunnerTestNg extends
 		AbstractTestNGCucumberTests {
@@ -29,6 +29,7 @@ public class FeatureCucumberTestRunnerTestNg extends
 	@Test(groups = { "gestionDatos" })
 	@Override
 	public void run_cukes() throws IOException {
+		SeleniumUtils.cleanScreenshotDir();
 		super.run_cukes();
 	}
 }
